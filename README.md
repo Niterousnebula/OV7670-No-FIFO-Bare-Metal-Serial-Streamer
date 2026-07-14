@@ -6,7 +6,7 @@ A stable, raw video streaming pipeline for the notorious non-FIFO OV7670 camera 
 
 If you have tried connecting an OV7670 without a hardware FIFO buffer directly to an ESP32 using jumper wires, you have likely hit the dreaded `cam_hal: FB-SIZE` error. 
 
-Because of the parasitic capacitance of unshielded breadboard wires, the ESP32's DMA hardware misses pixel clock edges. The camera's `VSYNC` signal fires and closes the frame window before the ESP32 can catch all 76,800 bytes, resulting in a dropped frame and a crashed stream. Furthermore, the ESP32's highly fragmented internal RAM often causes `malloc` crashes when attempting to allocate memory for standard software JPEG compression.
+The issue is a hardware timing mismatch. At default clock speeds, the ESP32's DMA struggles to read the unbuffered parallel pixel data fast enough. The camera's `VSYNC` signal fires and the driver's timing window closes before the ESP32 can catch all 76,800 bytes, resulting in a dropped frame and a crashed stream. Furthermore, the ESP32's highly fragmented internal RAM often causes `malloc` crashes when attempting to allocate memory for standard software JPEG compression.
 
 ## The Solution
 
