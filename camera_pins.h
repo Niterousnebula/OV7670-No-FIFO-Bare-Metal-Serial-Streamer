@@ -1,7 +1,7 @@
 #ifndef CAMERA_PINS_H
 #define CAMERA_PINS_H
 
-// Pin definition exactly matching your OV7670 to ESP32 DevKit wiring
+// Pin definition
 #define PWDN_GPIO_NUM     4
 #define RESET_GPIO_NUM    5
 #define XCLK_GPIO_NUM     32
