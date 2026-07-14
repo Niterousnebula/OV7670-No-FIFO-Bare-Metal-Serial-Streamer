@@ -34,5 +34,5 @@ This repository bypasses the hardware and memory limitations using three techniq
    pip install pyserial numpy opencv-python
 
 2. run the script.
-3. 
-`esp32`, `ov7670`, `opencv`, `computer-vision`, `bare-metal`, `arduino`, `camera-hack`
+---
+ `esp32`, `ov7670`, `opencv`, `computer-vision`, `bare-metal`, `arduino`, `camera-hack`
